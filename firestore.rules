@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Starter policy: deny everything until authentication and user-scoped
+    // data paths are implemented. Do not deploy permissive test rules.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
